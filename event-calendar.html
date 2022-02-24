@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Calendar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="event-calendar.css">
+</head>
+<body>
+    
+    <main>
+        <div class="container">
+            <h2 class="mb-4">Event Calendar</h2>
+            <div class="calender__container">
+                <div class="calender__container__header d-flex justify-content-between align-items-center">
+                    <div class="left__block">
+                        <ul class="selectable__buttons">
+                            <li class="active">Month</li>
+                            <li>Week</li>
+                            <li>Day</li>
+                        </ul>
+                    </div>
+                    <div class="right__block">
+                        <h4>Weather Information</h4>
+                    </div>
+                </div>
+                <div class="calender__container__sub_header d-flex justify-content-between align-items-center mb-3">
+                    <div class="left__block">
+                        <h2 class="monthYearDisplay">
+                            <span class="monthHeading"></span>, 
+                            <span class="yearHeading"></span>
+                        </h2>
+                    </div>
+                    <div class="right__block">
+                        <div class="calendar__slider">
+                            <button class="prev" id="prev"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button class="next" id="next"><i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="main__calender">
+                    <div class="calender__header">
+                        <ul class="weekdays">
+                            <li>Sunday</li>
+                            <li>Monday</li>
+                            <li>Tuesday</li>
+                            <li>Wednesday</li>
+                            <li>Thursday</li>
+                            <li>Friday</li>
+                            <li>Saturday</li>
+                        </ul>
+                    </div>
+                    <div class="calendar" id="calendar">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="event-calendar.js"></script>
+</body>
+</html>

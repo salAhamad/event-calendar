@@ -1,0 +1,245 @@
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --dosis: 'Dosis', sans-serif;
+  --roboto: 'Roboto', sans-serif;
+  --white-rgb: 255, 255, 255;
+  --white: #ffffff;
+  --black-rgb: 0, 0, 0;
+  --black: #000;
+  --carret-color-rgb: 255, 151, 81;
+  --carret-color:  #FF9751;
+  --bg-base: #f7f7f7;
+  --border-radius: .25rem;
+  --border-color: #e0e0e0;
+  --transtion: all 0.3s ease-in;
+  --icon-height: 40px;
+  --day-box-size: 100px;
+  --calendar-box-gap: 2px;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  font-family: var(--dosis);
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  min-height: 100vh;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  padding: 5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+main .container {
+  position: relative;
+  width: 100%;
+  max-width: calc(var(--day-box-size) * 7);
+  min-width: calc(var(--day-box-size) * 7);
+  text-align: center;
+}
+
+main .container > h2 {
+  font-weight: 700;
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+}
+
+main .container .calender__container {
+  position: relative;
+  width: 100%;
+  background-color: var(--white);
+  -webkit-box-shadow: 0 10px 20px rgba(var(--black-rgb), 0.05);
+          box-shadow: 0 10px 20px rgba(var(--black-rgb), 0.05);
+  padding: 2rem;
+  border-radius: calc(var(--border-radius) * 2);
+}
+
+main .container .calender__container__header {
+  position: relative;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+main .container .calender__container__header .selectable__buttons {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: .25rem;
+  background-color: rgba(var(--carret-color-rgb), 0.1);
+}
+
+main .container .calender__container__header .selectable__buttons li {
+  position: relative;
+  border-radius: var(--border-radius);
+  padding: .5rem 1rem;
+  -webkit-transition: var(--transtion);
+  transition: var(--transtion);
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+main .container .calender__container__header .selectable__buttons li.active, main .container .calender__container__header .selectable__buttons li:hover {
+  background-color: var(--carret-color);
+  color: var(--white);
+}
+
+main .container .calender__container__header .selectable__buttons li.active {
+  font-weight: 700;
+  -webkit-box-shadow: 0 5px 10px rgba(var(--black-rgb), 0.07);
+          box-shadow: 0 5px 10px rgba(var(--black-rgb), 0.07);
+}
+
+main .container .calender__container .calendar__slider {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: .25rem;
+}
+
+main .container .calender__container .calendar__slider button {
+  width: var(--icon-height);
+  height: var(--icon-height);
+  border: 0;
+  -webkit-transition: var(--transtion);
+  transition: var(--transtion);
+  border-radius: calc(var(--border-radius) * 1);
+  cursor: pointer;
+}
+
+main .container .calender__container .calendar__slider button:hover {
+  background-color: var(--carret-color);
+  color: var(--white);
+}
+
+main .container .calender__container .main__calender {
+  position: relative;
+  width: 100%;
+  border-bottom: 0;
+  border-radius: calc(var(--border-radius) * 1.5);
+  -webkit-box-shadow: 0 0 0 1px var(--border-color);
+          box-shadow: 0 0 0 1px var(--border-color);
+  background-color: var(--bg-base);
+}
+
+main .container .calender__container .main__calender .calender__header {
+  position: relative;
+}
+
+main .container .calender__container .main__calender .calender__header .weekdays {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: var(--roboto);
+  font-size: 0.9rem;
+}
+
+main .container .calender__container .main__calender .calender__header .weekdays li {
+  position: relative;
+  width: 100%;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  background-color: rgba(var(--carret-color-rgb), 0.1);
+  border-bottom: 1px solid var(--border-color);
+}
+
+main .container .calender__container .main__calender .calendar {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: var(--calendar-box-gap);
+}
+
+main .container .calender__container .main__calender .calendar .day__box {
+  position: relative;
+  width: calc(var(--day-box-size) - calc(var(--calendar-box-gap) / 0.142));
+  height: calc(var(--day-box-size) - calc(var(--calendar-box-gap) / 0.142));
+  font-family: var(--roboto);
+  background-color: var(--white);
+  -webkit-transition: var(--transtion);
+  transition: var(--transtion);
+}
+
+main .container .calender__container .main__calender .calendar .day__box:not(.padding):hover {
+  background-color: rgba(var(--carret-color-rgb), 1);
+  -webkit-box-shadow: inset 0 0 0 2px var(--carret-color);
+          box-shadow: inset 0 0 0 2px var(--carret-color);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  z-index: 1;
+  -webkit-box-shadow: 0 0 20px rgba(var(--black-rgb), 0.15);
+          box-shadow: 0 0 20px rgba(var(--black-rgb), 0.15);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  z-index: 5;
+}
+
+main .container .calender__container .main__calender .calendar .day__box.padding {
+  cursor: default;
+  background-color: var(--bg-base);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+main .container .calender__container .main__calender .calendar .day__box .date {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--icon-height);
+  height: var(--icon-height);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
