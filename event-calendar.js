@@ -14,9 +14,9 @@ function load() {
     let date = new Date();
     if(nav !== 0) {
         date.setMonth(new Date().getMonth() + nav);
-        console.log(date);
     }
     const day = date.getDate();
+    console.log(day);
     const month = date.getMonth();
     const year = date.getFullYear();
     const firstDayOfMonth = new Date(year, month, 1);
@@ -44,6 +44,9 @@ function load() {
 
         if(i > paddingDays) {
             daySquire.querySelector('.date').innerText = i - paddingDays;
+            if(i - paddingDays === day && nav === 0) {
+                daySquire.classList.add('current__day');
+            }
         } else {
             daySquire.classList.add('padding');
         }
@@ -56,12 +59,10 @@ function initButtons() {
     prevButton.addEventListener('click', function() {
         nav--;
         load();
-        console.log(nav);
     });
     nextButton.addEventListener('click', function() {
         nav++;
         load();
-        console.log(nav);
     });
 }
 initButtons();

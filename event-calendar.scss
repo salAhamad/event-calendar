@@ -11,6 +11,8 @@
     --black-rgb: 0, 0, 0;
     --black: #000;
 
+    --blue-color-rgb: 115, 91, 243;
+    --blue-color: #735BF3;
     --carret-color-rgb: 255, 151, 81;
     --carret-color:  #FF9751;
     --bg-base: #f7f7f7;
@@ -154,7 +156,7 @@ main {
                             box-shadow: none;
                             z-index: 1;
                             box-shadow: 0 0 20px rgba(var(--black-rgb), .15);
-                            transform: scale(1.2);
+                            transform: scale(1.15);
                             transform-origin: center;
                             z-index: 5;
                         }
@@ -163,7 +165,13 @@ main {
                             background-color: var(--bg-base);
                             box-shadow: none;
                         }
-                        &:hover {
+                        &.current__day {
+                            background-color: rgba(var(--blue-color-rgb), .2);
+                            color: var(--blue-color);
+                            &:hover {
+                                background-color: rgba(var(--blue-color-rgb), 1);
+                                color: var(--white);
+                            }
                         }
                         .date {
                             position: absolute;
